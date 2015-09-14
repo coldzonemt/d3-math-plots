@@ -17,10 +17,10 @@ var svg = d3.select('body')
   .append('svg')
   .attr('width', svgW+50)
   .attr('height', svgH+50)
-  .append('svg:g') //"svg:g" is significant here - why?
-  .attr('transform', 'translate(30,30)'); //define these
+  .append('svg:g') //"svg:g" --> the g here is the group element. It is used to group svg elements together.
+  .attr('transform', 'translate(30,30)'); //
 
-//"build" the circles
+//Create and append the circles
 svg.selectAll('circle')
   .data(dataSet)
   .enter()
@@ -33,6 +33,7 @@ svg.selectAll('circle')
     })
     .attr('r', 5);
 
+//Append the axes
 svg.append('svg:g')
   .attr('class', 'xaxis')
   .attr('class', 'yaxis');
